@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С Днём Рождения, Папа!</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    overflow:hidden;
+    color:white;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,#60a5fa40,transparent 70%);
+    top:-200px;
+    left:-200px;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#f59e0b25,transparent 70%);
+    bottom:-250px;
+    right:-250px;
+}
+
+/* ШАРИКИ */
+
+.balloons{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.balloon{
+    position:absolute;
+    bottom:-150px;
+    width:60px;
+    height:75px;
+    border-radius:50%;
+    opacity:0.75;
+    animation:floatUp linear infinite;
+}
+
+.balloon::before{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:70px;
+    background:rgba(255,255,255,0.4);
+    left:50%;
+    top:70px;
+}
+
+.balloon::after{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:rgba(255,255,255,0.35);
+    border-radius:50%;
+    top:15px;
+    left:12px;
+}
+
+.balloon:nth-child(1){
+    left:5%;
+    background:#60a5fa;
+    animation-duration:14s;
+}
+
+.balloon:nth-child(2){
+    left:18%;
+    background:#fbbf24;
+    animation-duration:12s;
+    animation-delay:2s;
+}
+
+.balloon:nth-child(3){
+    left:30%;
+    background:#f87171;
+    animation-duration:15s;
+    animation-delay:1s;
+}
+
+.balloon:nth-child(4){
+    left:45%;
+    background:#34d399;
+    animation-duration:13s;
+}
+
+.balloon:nth-child(5){
+    left:60%;
+    background:#c084fc;
+    animation-duration:16s;
+    animation-delay:3s;
+}
+
+.balloon:nth-child(6){
+    left:72%;
+    background:#f472b6;
+    animation-duration:12s;
+    animation-delay:1s;
+}
+
+.balloon:nth-child(7){
+    left:85%;
+    background:#22d3ee;
+    animation-duration:14s;
+}
+
+.balloon:nth-child(8){
+    left:95%;
+    background:#facc15;
+    animation-duration:17s;
+    animation-delay:2s;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(-5deg);
+    }
+    50%{
+        transform:translateY(-60vh) rotate(5deg);
+    }
+    to{
+        transform:translateY(-120vh) rotate(-5deg);
+    }
+}
+
+/* КАРТОЧКА */
+
+.card{
+    position:relative;
+    z-index:10;
+    max-width:850px;
+    width:90%;
+    padding:70px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    animation:fadeIn 1.5s ease;
+}
+
+h1{
+    font-size:4rem;
+    text-align:center;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#60a5fa,#ffffff,#fbbf24);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:1.2rem;
+    opacity:0.8;
+    margin-bottom:50px;
+}
+
+.message{
+    text-align:center;
+    font-size:1.4rem;
+    line-height:2;
+    font-weight:300;
+}
+
+.heart{
+    text-align:center;
+    font-size:3rem;
+    margin-top:35px;
+    animation:pulse 2s infinite;
+}
+
+.signature{
+    margin-top:40px;
+    text-align:right;
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="balloons">
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+</div>
+
+<div class="card">
+
+    <h1>С Днём Рождения!</h1>
+
+    <div class="subtitle">
+        Дорогому папе
+    </div>
+
+    <div class="message">
+        Папа, с Днём Рождения!
+        <br><br>
+
+        Желаю тебе крепкого здоровья,
+        счастья, удачи и исполнения всех желаний.
+        <br><br>
+
+        Спасибо за твою поддержку,
+        заботу и всё, что ты для меня делаешь.
+        <br><br>
+
+        Люблю тебя ❤️
+    </div>
+
+    <div class="heart">🎉</div>
+
+    <div class="signature">
+        Твой сын
+    </div>
+
+</div>
+
+</body>
+</html>
